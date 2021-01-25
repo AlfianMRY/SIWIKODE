@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="animate.css-4.1.1/animate.css">
+    <link rel="stylesheet" href="animate.css-4.1.1/animate.compat.css">
+    <link rel="stylesheet" href="animate.css-4.1.1/animate.min.css">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+
+    <!-- My Css -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body class="">
+    <div class="navbar-dark bg-dark">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg ms-3">   
+            <div class="container-fluid text-light">
+                <h2 class="me-0 pt-1 navbar-brand logo">Wisata Depok</h2>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link active utama text-warning" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link" href="daftarrekreasi.html">Wisata Rekreasi</a>
+                            <a class="nav-link" href="daftarkuliner.html">Wisata Kuliner</a>
+                            <div class="dropdown">
+                                <button class="dropbtn">Registrasi</button>
+                                <div class="dropdown-content">
+                                  <a href="regis_rekreasi.html">Registrasi Wisata Rekreasi</a>
+                                  <a href="regis_kuliner.html">Registrasi Wisata Kuliner</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="navbar d-flex justify-content-end ">
+                        <a href="login.html" class="btn btn-outline-primary">Login</a>
+                    </div>
+            </div>  
+        </nav>
+    </div>
+
+    <!-- Judul -->
+    <div class="jumbotron jumbotron-fluid" style=" color: rgb(255, 196, 0); background-image: url(https://cdn.pixabay.com/photo/2014/05/03/00/09/landscape-336542_960_720.jpg);  ">
+        <div class="container text-center" >
+          <h1 class="display-4 animated animate__fadeInDown">SIWIKODE</h1>
+          <p class="lead animated animate__zoomIn" style="color: black; text-shadow: 1px 1px white;" >Wisata Rekreasi & Wisata Kuliner Unggulan Kota Depok</p>
+        </div>
+    </div>
+    <!-- isi -->
+    <div class="container">
+        <div class="panel">
+            <ul class="mb nav nav-tabs mt-5 mb-3 justify-content-around pilihan">
+                <li class="nav-item kiri">
+                    <a onclick="kuliner();" id="akuliner" class="nav-link " href="#kuliner">
+                        <p>Kuliner</p>
+                        <img src="https://iqbalazhari.com/wp-content/uploads/2016/11/200-Tempat-Wisata-Kuliner-Jogja-Murah-Meriah-Lengkap-dan-Enak.jpg" alt="">
+                      </a>
+                </li>
+                <li class="nav-item kanan">
+                    <a onclick="about();" id="aabout" class="nav-link active" href="#about">
+                    <img style="max-width: 250px; height: 200px;" src="http://climatetechs.com/wp-content/uploads/2019/06/about-us.png" alt="">
+                    </a>
+                </li>
+                <li class="nav-item tengah">
+                  <a onclick="rekreasi();" id="arekreasi" class="nav-link" href="#rekreasi">
+                    <p>Rekreasi</p>
+                    <img src="https://kanciltakcerdik.files.wordpress.com/2012/04/img_0208.jpg" alt="">
+                  </a>
+                </li>
+            </ul>
+        </div>
+        <!-- <div class="container-fluid"> -->
+            <div class="row hide row-col" id="kuliner">
+                <div class="col-md ">
+                  <div class="row">
+                        <div class="col-md-6 m-3 animated animate__fadeInRight">
+                            <img src="http://4.bp.blogspot.com/-qdIXMg1GwPk/URMfbbZyh2I/AAAAAAAABBY/3E1Dwj81o0k/s1600/IMG_1435.JPG" class="card-img-top" alt="...">
+                        </div>
+                        <div class="col  m-3 animated animate__fadeInDown">
+                            <h5 class="card-title">Pondok Laras</h5>
+                            <p class="card-text">Pondok Laras menyediakan beberapa tempat atau fasilitas yang lumayan oke nih guys. 
+                              Disini sudah tersedia mushola yang cukup luas loh, bukan hanya musholanya saja namun disini juga tersedia tempat outdoor
+                              untuk kita bisa melakukan party loh. Untuk tempat makanyya sendiri disini tersedia saung yang cukup besar dan suasana yang asri, tempat ini sangat cocok untuk makan bareng keluarga atau teman teman.</p>
+                            <a href="detail_ponlar.html" class="btn btn-primary">Detail</a>
+                        </div>
+                  </div>
+      
+                  <div class="row">
+                    <div class="col-md-6 m-3 animated animate__fadeInLeft">
+                      <img src="https://www.jejakpiknik.com/wp-content/uploads/2019/10/saung-bambu-mang-engking-depok-630x380.jpg" class="card-img-top" alt="...">
+                    </div>
+                    <div class="col m-3 animated animate__fadeInDown">
+                      <h5 class="card-title">Mang Engking</h5>
+                      <p class="card-text">Menyediakan aneka ragam menu makanan khas Sunda. Memiliki saung untuk duduk lesehan dgn pemandangan kolam dan tentunya ada fasilitas untuk anak loh.</p>
+                      <a href="detail_manking.html" class="btn btn-primary">Detail</a>
+                    </div>
+                  </div>
+      
+                  <div class="row">
+                    <div class="col-md-6 m-3 animated animate__fadeInRight">
+                      <img src="https://i.pinimg.com/originals/90/6d/0b/906d0b4a432248cba39ac5afaafa979f.jpg" class="card-img-top" alt="...">
+                    </div>
+                    <div class="col m-3 animated animate__fadeInDown">
+                      <h5 class="card-title">Mang Kabayan</h5>
+                      <p class="card-text">Menyediakan menu lengkap khas makanan Sunda, yg dipadu dgn ruangan untuk duduk dan lesehan dan tentunya tempat ini sangat family friendly, sehingga cocok bila ingin membawa anak kecil kesini.</p>
+                      <a href="detail_mankaba.html" class="btn btn-primary">Detail</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="row hide row-col" id="rekreasi">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-md-6 m-3 animated animate__fadeInLeft">
+                      <img src="https://wisatalengkap.com/wp-content/uploads/2018/07/godong-ijo-1-600x400.jpg" class="card-img-top" alt="...">              
+                    </div>
+                    <div class="col m-3 animated animate__fadeInDown">
+                      <h5 class="card-title">Godong Ijo</h5>
+                      <p class="card-text">Godongijo adalah tempat wisata dengan konsep hutan di tengah kota yang dinobatkan sebagai Amazing Garden se-Asia Tenggara. Memiliki fasilitas kolam pemancingan, restoran sunda, function room, ecotainment program dan vertical garden center. Sudah berdiri sejak tahun 1998.</p>
+                      <a href="detailgodongijo.html" class="btn btn-primary">Detail</a>
+                    </div>
+                  </div>
+      
+                  <div class="row">
+                    <div class="col-md-6 m-3 animated animate__fadeInRight">
+                      <img src="https://wisatalengkap.com/wp-content/uploads/2018/07/dedehwijaya_19_7_2018_16_34_55_6-1024x1024.jpg" class="card-img-top" alt="...">              
+                    </div>
+                    <div class="col m-3 animated animate__fadeInDown">
+                      <h5 class="card-title">Taman Wisata Pasir Putih</h5>
+                      <p class="card-text">Taman wisata Pasir Putih adalah salah satu obyek wisata (waterboom) unggulan di Depok. Terletak di Desa Pasir Putih, Sawangan Depok diatas tanah bersertifikat seluas 19.000 M. Beroperasi sejak Juli tahun 2010, diresmikan oleh wakil Menteri Pariwisata RI bapak Dr.Sapta Niwandar.</p>
+                      <a href="kuliner1.html" class="btn btn-primary">Detail</a>
+                    </div>
+                  </div>
+      
+                  <div class="row">
+                    <div class="col-md-6 m-3 animated animate__fadeInLeft">
+                      <img src="https://wisatalengkap.com/wp-content/uploads/2018/07/dsc01390.jpg" class="card-img-top" alt="...">
+                    </div>
+                    <div class="col m-3 animated animate__fadeInDown">
+                      <h5 class="card-title">Masjid Kubah Emas</h5>
+                      <p class="card-text">Masjid Dian Al Mahri dikenal juga dengan nama Masjid Kubah Emas [1] adalah sebuah masjid yang dibangun di tepi jalan Raya Meruyung, Limo, Depok di Kecamatan Limo, Depok. Masjid ini selain sebagai menjadi tempat ibadah salat bagi umat muslim sehari-hari, kompleks masjid ini juga menjadi kawasan wisata keluarga dan menarik perhatian banyak orang karena kubah-kubahnya yang dibuat dari emas. Selain itu karena luasnya area yang ada dan bebas diakses untuk umum, sehingga tempat ini sering menjadi tujuan liburan keluarga atau hanya sekadar dijadikan tempat beristirahat.</p>
+                      <a href="kuliner1.html" class="btn btn-primary">Detail</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="row row-col" id="about">
+                <div class="col">
+                  <div class="row about-web d-flex align-middle mt-5">
+                    <div class="col-md-4 text-center">
+                      <img class="rounded-circle " src="https://png.pngtree.com/svg/20161113/ef1b24279e.png" alt="">
+                    </div>
+                    <div class="col-md text-middle" style="padding-top: 30px;">
+                      <h4>Alfian Muhamad Rizal Yuristya</h4>
+                      <p>0110219114</p>
+                      <p>Berpartisipasi dalam pembuatan website ini pada halaman LandingPage, Detail Kuliner, dan Halaman Admin kuliner
+                    </div>
+                  </div>
+      
+                  <div class="row about-web mt-5">
+                    <div class="col-md-4 text-center" >
+                      <img class="rounded-circle" src="https://image.flaticon.com/icons/png/512/306/306205.png" alt="">
+                    </div>
+                    <div class="col-md "style="padding-top: 50px;">
+                      <h4>Arizal Nur Islachuddin</h4>
+                      <p>0110219034</p>
+                      <p>Berpartisipasi dalam peembuatan website ini pada halaman Detail Wisata Rekreasi dan Form Registrasi Kuliner</p>
+                    </div>
+                  </div>
+      
+                  <div class="row about-web mt-5">
+                    <div class="col-md-4 text-center" >
+                      <img class="rounded-circle" src="https://gadi-wala.com/wp-content/uploads/2020/02/men.png" alt="">
+                      <!--  -->
+                    </div>
+                    <div class="col-md "style="padding-top: 50px;">
+                      <h4>Derren Dwi Sukrilah</h4>
+                      <p>0110219135</p>
+                      <p>Berpartisipasi dalam peembuatan website ini pada halaman Daftar Wisata Rekreasi, Form Registrasi Rekreasi</p>
+                    </div>
+                  </div>
+      
+                  <div class="row about-web mt-5">
+                    <div class="col-md-4 text-center" >
+                      <img class="rounded-circle" src="https://cdn3.iconfinder.com/data/icons/avatars-collection/256/05-512.png" alt="">
+                    </div>
+                    <div class="col-md "style="padding-top: 50px;">
+                      <h4>Dimas Bagus Setyawan</h4>
+                      <p>0110218038</p>
+                      <p>Berpartisipasi dalam peembuatan website ini pada halaman Daftar Wisata Kuliner, Kelola Data Wisata Rekreasi dan Testimoni</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+    </div>
+    <!-- footer -->
+    <footer class="bg-dark" style="height: 55px;">
+        <p style="color:gray; text-align: center;" class="pt-3">Develop By @Kelompok 5 STT-NF</p>
+      </footer>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+      <script>
+        function kuliner(){
+          var kuliner = document.getElementById("akuliner");
+          var rekreasi = document.getElementById("arekreasi");
+          var about =document.getElementById("aabout");
+          kuliner.classList.add("active");
+          rekreasi.classList.remove("active");
+          about.classList.remove("active");
+
+          document.getElementById("kuliner").setAttribute("class","row");
+          document.getElementById("rekreasi").setAttribute("class","hide");
+          document.getElementById("about").setAttribute("class","hide");
+        }
+        function rekreasi(){
+          var kuliner = document.getElementById("akuliner");
+          var rekreasi = document.getElementById("arekreasi");
+          var about =document.getElementById("aabout");
+          kuliner.classList.remove("active");
+          rekreasi.classList.add("active");
+          about.classList.remove("active");
+
+          document.getElementById("kuliner").setAttribute("class","hide");
+          document.getElementById("rekreasi").setAttribute("class","row");
+          document.getElementById("about").setAttribute("class","hide");
+        }
+        function about(){
+          var kuliner = document.getElementById("akuliner");
+          var rekreasi = document.getElementById("arekreasi");
+          var about =document.getElementById("aabout");
+          kuliner.classList.remove("active");
+          rekreasi.classList.remove("active");
+          about.classList.add("active");
+
+          document.getElementById("kuliner").setAttribute("class","hide");
+          document.getElementById("rekreasi").setAttribute("class","hide");
+          document.getElementById("about").setAttribute("class","row");
+        }
+      </script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+</body>
+</html>

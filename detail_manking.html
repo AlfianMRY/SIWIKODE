@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- My Link -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+
+    <!-- My CSS  -->
+
+
+    <style>
+        @media (max-width: 575.98px) {
+            .testimoni p{
+                min-width: 260px ;
+            }
+            .testimoni h4{
+                margin-top: 10px;
+            }
+        }
+        @media (min-width: 1200px) { 
+            .testi p {
+                text-align: justify;
+                margin-left: -25px;
+            }
+            .testi h4{
+                margin-left: -25px;
+            }
+        }
+        @media (max-width: 768px) {
+            .testi img{
+                align-items: center;
+            }
+        }
+        @media (min-width: 768px) {
+            .bintang{
+                padding-left: -50px;
+                margin-left: -20px;
+                padding-top: 3px;
+            }
+            .galery img{
+                padding: 5px;
+                /* width: 250px; */
+                min-height: 400px;
+            }
+            .map iframe{
+                /* width: 550px; */
+                height: 250px;
+            }
+            .testi img{
+                max-width: 150px;
+                max-height: 150px;
+            }
+            
+        }
+        .galery img{
+                padding: 5px;
+                /* width: 250px; */
+                height: 250px;
+            }
+        
+        .checked {
+            color: orange;
+        }
+        
+        .breadcrumb{
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        .map iframe{
+            width: 100%;
+        }
+        hr{
+            border-color: blue;
+        }
+        .testi img{
+            width: 150px;
+            height: 150px;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .testi {
+            box-shadow: 1px solid blue;
+        }
+    </style>
+    <title>Detail Pondok Laras</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="navbar-dark bg-dark">
+        <!-- Navbar  -->
+      <nav class="navbar navbar-expand-lg ms-3">   
+          <div class="container-fluid text-light">
+            <h2 class="me-0 pt-1 navbar-brand logo">Wisata Depok</h2>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                      <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                      <a class="nav-link" href="daftarrekreasi.html">Wisata Rekreasi</a>
+                      <a class="nav-link active text-warning" href="daftarkuliner.html">Wisata Kuliner</a>
+                      <div class="dropdown">
+                        <button class="dropbtn">Registrasi</button>
+                        <div class="dropdown-content">
+                          <a href="regis_rekreasi.html">Registrasi Wisata Rekreasi</a>
+                          <a href="regis_kuliner.html">Registrasi Wisata Kuliner</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        <!-- Button Login -->
+              <div class="navbar justify-content-end ">
+                <div class="navbar d-flex justify-content-end ">
+                    <a href="login.html" class="btn btn-outline-primary">Login</a>
+                </div>
+              </div>
+          </div>  
+        </nav>
+        <!-- Breadcrum (sesuaikan) -->
+        <div class="navbar justify-content-end me-4"> 
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="daftarkuliner.html">Wisata Kuliner</a></li>
+                    <li class="breadcrumb-item active text-warning" aria-current="page">Mang Engking</li>
+                </ol>
+            </nav>
+        </div>       
+    </div>
+
+    <!-- isi -->
+    <div class="container">
+        <div class="pt-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Detail Mang Engking</h2>
+                    
+                </div>
+                <div class="col-md mt-2 bintang">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <!-- Galery Foto -->
+        <section id="galery" class="galery"> 
+            
+            
+            <div class="row justify-content-center">
+                <div class="col-10 ">
+                    <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                            <img src="https://www.datawisata.com/wp-content/uploads/2018/05/daftar-harga-menu-mang-engking-1024x683.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://media-cdn.tripadvisor.com/media/photo-s/0a/44/66/32/20150118-172335-largejpg.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://www.jejakpiknik.com/wp-content/uploads/2019/10/mang-engking-UI-630x380.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://www.jejakpiknik.com/wp-content/uploads/2019/10/suasana-malam-hari-mang-engking-ui-630x380.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </section>
+    </div>
+
+    <!-- Deskripsi & Map -->
+    <section id="detail" class="detail ">
+        <div class="container">
+            <div class="row d-flex justify-content-between ">
+                <div class="col-md-6 pb-4">
+                    <div class="card border-primary">
+                        <div class="card-header">
+                            Deskripsi Fasilitas
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote">
+                                <p> Menyediakan aneka ragam menu makanan khas Sunda. Memiliki saung untuk duduk lesehan dgn pemandangan kolam dan tentunya ada fasilitas untuk anak loh.
+                                    <br>
+                                    Adapun opsi layanan yang diberikan sebagai berikut:
+                                    <br>
+                                    1. Antar tanpa bertemu
+                                    <br>
+                                    2. Pesan antar
+                                    <br>
+                                    3. Bawa pulang
+                                    <br>
+                                    4. Makan di tempat
+                                    <br>
+                                     </p>
+                                
+                            <p class="blockquote-footer">Penulis </p>
+                        </blockquote>
+                    </div>
+                </div>  
+            </div>
+                <div class="col-md-5">
+                    <div class="card map border-primary" >
+                        <!-- <img src="..." class="card-img-top" alt="..."> -->
+                        <div id="map-container-google-2" class="z-depth-1-half map-container " >
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63444.60760346401!2d106.8335542925593!3d-6.356757772357958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec306e509193%3A0x25a371469eb859e9!2sGubug%20Makan%20Mang%20Engking!5e0!3m2!1sid!2sid!4v1608116338314!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Kampus UI Jalan Danau Salam, RW.3, Srengseng Sawah, Kec. Jagakarsa, Kota Jakarta Selatan, Jawa Barat 16424 <br> Telepon : <br>
+                                +628161117751</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section id="testi" class="testi">
+        <div class="container">
+            <div class="row testimoni">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <img class="rounded-circle" src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png" alt="">
+                        </div>
+                        <div class="col">
+                            <h4>Fauziah</h4>
+                            <p>Tempatnya asri dan sejuk karena di tengahnya ada danau buatan dan pepohonan di sekitar. </p>
+                        </div>
+                     </div>  
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <img class="rounded-circle" src="https://www.shareicon.net/data/512x512/2016/09/15/829471_user_512x512.png" alt="">
+                        </div>
+                        <div class="col">
+                            <h4>Riau Wibawa</h4>
+                            <p>Pelayanan ramah, tempat nyaman, menu lengkap, cocok untuk keluarga dan anak2 serta peneraan protokol kesehatan selama pandemi</p>
+                        </div>
+                     </div>  
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <img class="rounded-circle" src="https://www.shareicon.net/data/512x512/2016/09/15/829466_man_512x512.png" alt="">
+                        </div>
+                        <div class="col">
+                            <h4>Isnantony</h4>
+                            <p>Suasananya asik untuk makan bareng keluarga. Banyak ikan jadi anak-anak gak bete dan tempatnya juga luas jadi anak-anak bebas main.</p>
+                        </div>
+                     </div>  
+                </div>
+             </div>   
+        </div>
+    </section>
+    
+    <!-- footer -->
+    <footer class="bg-dark" style="height: 55px;">
+        <p style="color:gray; text-align: center;" class="pt-3">Develop By @Kelompok 5 STT-NF</p>
+    </footer>
+  
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

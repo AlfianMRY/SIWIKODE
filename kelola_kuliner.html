@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .breadcrumb{
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        legend.scheduler-border {
+            width:inherit; /* Or auto */
+            padding:0 10px; /* To give a bit of padding on the left and right */
+            border-bottom:none;
+        }
+        fieldset.scheduler-border {
+            border: 1px groove #ddd !important;
+            padding: 0 1.4em 1.4em 1.4em !important;
+            margin: 0 0 1.5em 0 !important;
+            -webkit-box-shadow:  0px 0px 0px 0px #000;
+                    box-shadow:  0px 0px 0px 0px #000;
+        }
+    </style>
+    <script>
+        function edit_row(no){
+            document.getElementById("edit_button"+no).style.display="none";
+            document.getElementById("save_button"+no).style.display="block";
+                
+            var name=document.getElementById("name_row"+no);
+            var jualan=document.getElementById("jualan_row"+no);
+            var nohp=document.getElementById("nohp_row"+no);
+            var foto=document.getElementById("foto_row"+no);
+            var rate=document.getElementById("rate_row"+no);
+                
+            var name_data=name.innerHTML;
+            var jualan_data=jualan.innerHTML;
+            var nohp_data=nohp.innerHTML;
+            var foto_data=foto.innerHTML;
+            var rate_data=rate.innerHTML;
+                
+            name.innerHTML="<input type='text' id='name_text"+no+"' value='"+name_data+"' placeHolder='Masukan Nama Usaha'>";
+            jualan.innerHTML="<input type='text' id='jualan_text"+no+"' value='"+jualan_data+"' placeholder='Masukan Jenis Usaha'>";
+            nohp.innerHTML="<input type='text' id='nohp_text"+no+"' value='"+nohp_data+"' placeholder='Masukan Nomer HP'>";
+            //  country.innerHTML="<a href='"+country_data+"'>Link Foto</a>";
+            foto.innerHTML="<input type='text' id='foto_text"+no+"' placeholder='Masukan Link Foto'>";
+            rate.innerHTML="<input type='text' id='rate_text"+no+"' placeholder='Masukan 1-5'>";
+        }
+
+        function save_row(no){
+            var bintang = "";
+            var name_val=document.getElementById("name_text"+no).value;
+            var jualan_val=document.getElementById("jualan_text"+no).value;
+            var nohp_val=document.getElementById("nohp_text"+no).value;
+            var foto_val=document.getElementById("foto_text"+no).value;
+            var rate_val=document.getElementById("rate_text"+no).value;
+            
+
+            document.getElementById("name_row"+no).innerHTML=name_val;
+            document.getElementById("jualan_row"+no).innerHTML=jualan_val;
+            document.getElementById("nohp_row"+no).innerHTML=nohp_val
+            document.getElementById("foto_row"+no).innerHTML="<a href='"+foto_val+"'>Link Foto</a>";
+            switch(rate_val){
+                case "1":
+                        bintang = "<span style='color: orange ' class='fa fa-star'></span>";
+                        break;
+                    case "2":
+                        bintang = "<span style='color: orange ' class='fa fa-star'></span><span style='color: orange ' class='fa fa-star'></span>";
+                        break;
+                    case "3":
+                        bintang = "<span style='color: orange ' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span>";
+                        break;
+                    case "4":
+                        bintang = "<span style='color: orange ' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span>";
+                        break;
+                    case "5":
+                        bintang = "<span style='color: orange ' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span>";
+                        break;
+                    default:
+                        bintang = "Rating anda terlalu rendah atau terlalu tinggi";
+                        break
+                    }
+            document.getElementById("rate_row"+no).innerHTML=bintang;
+
+            document.getElementById("edit_button"+no).style.display="block";
+            document.getElementById("save_button"+no).style.display="none";
+        }
+
+        function delete_row(no){
+            document.getElementById("row"+no+"").outerHTML="";
+        }
+
+        function add_row(){
+            var new_name=document.getElementById("new_name").value;
+            var new_jualan=document.getElementById("new_jualan").value;
+            var new_nohp=document.getElementById("new_nohp").value;
+            var new_foto=document.getElementById("new_foto").value;
+            var new_rate=document.getElementById("new_rate").value;
+            var new_bintang="";
+            switch(new_rate){
+                    case "1":
+                        new_bintang = "<span style='color: orange ' class='fa fa-star'></span>";
+                        break;
+                    case "2":
+                        new_bintang = "<span style='color: orange ' class='fa fa-star'></span><span style='color: orange ' class='fa fa-star'></span>";
+                        break;
+                    case "3":
+                        new_bintang = "<span style='color: orange ' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span>";
+                        break;
+                    case "4":
+                        new_bintang = "<span style='color: orange ' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span>";
+                        break;
+                    case "5":
+                        new_bintang = "<span style='color: orange ' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span><span style='color: orange' class='fa fa-star'></span>";
+                        break;
+                    default:
+                        new_bintang = "Rating anda terlalu rendah atau terlalu tinggi";
+                        break
+                    }
+                
+            var table=document.getElementById("data_table");
+            var table_len=(table.rows.length)-1;
+            var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='name_row"+table_len+"'>"+new_name+"</td><td id='jualan_row"+table_len+"'>"+new_jualan+"</td><td id='nohp_row"+table_len+"'>"+new_nohp+"</td><td id='foto_row"+table_len+"'><a href='"+new_foto+"'>Link Foto</a></td><td id='rate_row"+table_len+"'>"+new_bintang+"</td><td><div class='btn-group' role='group' aria-label='Basic mixed styles example'><a type='button' id='edit_button"+table_len+"' class='edit' onclick='edit_row("+table_len+")'><i class='material-icons' style='color: orange;'>&#xE254;</i></a><a type='button' id='save_button"+table_len+"' class='save' onclick='save_row("+table_len+")' style='display: none;'><i class='material-icons' style='color: rgb(47, 255, 92)7, 129);'>&#xE03B;</i></a><a type='button' class='delete' onclick='delete_row("+table_len+")'><i class='material-icons' style='color: red;'>&#xE872;</i></a></div></td></tr>";
+
+            document.getElementById("new_row").setAttribute("style","display: none");
+            document.getElementById("new_name").value="";
+            document.getElementById("new_foto").value="";
+            document.getElementById("new_rate").value="";
+        }
+        function input_data(){
+            document.getElementById('new_row').removeAttribute("style");
+        }
+    </script>
+
+    <title>Kelola Wisata Kuliner</title>
+
+  </head>
+  <body>
+    
+
+<!-- Navbar -->
+<div class="navbar-dark bg-dark" >
+    <!-- Navbar  -->
+  <nav class="navbar navbar-expand-lg ms-3" >   
+      <div class="container-fluid text-light">
+          <h2 class="me-0 pt-1">Wisata Depok</h2>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link utama" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" href="daftarrekreasi.html">Wisata Rekreasi</a>
+              <a class="nav-link active" href="daftarkuliner.html">Wisata Kuliner</a>
+            </div>
+          </div>
+    <!-- Button Login -->
+            <div class="navbar justify-content-end ">
+                <a href="login.html" class="btn btn-outline-danger logout">Logout</a>
+            </div>
+        </div>  
+    </nav>
+    <!-- Breadcrum (sesuaikan) -->
+    <div class="navbar justify-content-end me-4"> 
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="menu.html">Admin</a></li>
+                <li class="breadcrumb-item active text-warning" aria-current="page">Kelola Wisata Kuliner</li>
+            </ol>
+        </nav>
+    </div>       
+</div>
+
+<!-- Tabel -->
+<div class="container mt-3" style="min-height: 420px;">
+    <div class="row">
+        <div class="col">
+            <legend>Kelola Data Wisata Kuliner</legend>
+        </div>
+        <div class="col">
+            <a type="button" class="btn btn-outline-success" onclick="input_data();"><i class="fa fa-plus"> Data</i></a>
+        </div>
+    </div>
+    <div style="overflow-x: auto;">
+        <table class="text-center table table-primary table-striped align-middle justify-content-center align-center"id="data_table" >
+            <tr>
+                <th>Nama Tempat</th>
+                <th>Jenis</th>
+                <th>No HP</th>
+                <th>Link Foto</th>
+                <th>Rating</th>
+                <th>Action</th>
+            </tr>
+            
+            <tr id="row1">
+                <td id="name_row1">Pondok Laras</td>
+                <td id="jualan_row1">Rumah Makan</td>
+                <td id="nohp_row1">02187705666</td>
+                <td id="foto_row1"><a target="_blank" href="http://4.bp.blogspot.com/-qdIXMg1GwPk/URMfbbZyh2I/AAAAAAAABBY/3E1Dwj81o0k/s1600/IMG_1435.JPG">Link Foto</a></td>
+                <td id="rate_row1">
+                    <span style="color:orange" class="fa fa-star "></span>
+                    <span style="color:orange" class="fa fa-star "></span>
+                    <span style="color:orange" class="fa fa-star "></span>
+                </td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <a type="button" id="edit_button1" class="edit" onclick="edit_row('1')"><i class="material-icons " style="color: orange;">&#xE254;</i></a>
+                        <a type="button" id="save_button1" class="save" onclick="save_row('1')" style="display: none;"><i class="material-icons" style="color: rgb(47, 255, 92)7, 129);">&#xE03B;</i></a>
+                        <a type="button" class="delete" onclick="delete_row('1')"><i class="material-icons" style="color: red;">&#xE872;</i></a>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr id="row2">
+                <td id="name_row2">Mang Engking</td>
+                <td id="jualan_row2">Rumah Makan</td>
+                <td id="nohp_row2">08161117751</td>
+                <td id="foto_row2"><a target="_blank" href="http://4.bp.blogspot.com/-qdIXMg1GwPk/URMfbbZyh2I/AAAAAAAABBY/3E1Dwj81o0k/s1600/IMG_1435.JPG">Link Foto</a></td>
+                <td id="rate_row2">
+                    <span style="color:orange" class="fa fa-star "></span>
+                    <span style="color:orange" class="fa fa-star "></span>
+                    <span style="color:orange" class="fa fa-star "></span>
+                    <span style="color:orange" class="fa fa-star "></span>
+                </td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <a type="button" id="edit_button2" class="edit" onclick="edit_row('2')"><i class="material-icons " style="color: orange;">&#xE254;</i></a>
+                        <a type="button" id="save_button2" class="save" onclick="save_row('2')" style="display: none;"><i class="material-icons " style="color: rgb(47, 255, 92)7, 129);">&#xE03B;</i></a>
+                        <a type="button" class="delete" onclick="delete_row('2')"><i class="material-icons" style="color: red;">&#xE872;</i></a>
+                    </div>
+                </td>
+            </tr>
+
+            <tr id="row3">
+                <td id="name_row3">Mang Kabayan</td>
+                <td id="jualan_row3">Rumah Makan</td>
+                <td id="nohp_row3">02178886688</td>
+                <td id="foto_row3"><a target="_blank" href="http://4.bp.blogspot.com/-qdIXMg1GwPk/URMfbbZyh2I/AAAAAAAABBY/3E1Dwj81o0k/s1600/IMG_1435.JPG">Link Foto</a></td>
+                <td id="rate_row3">
+                    <span style="color:orange" class="fa fa-star "></span>
+                    <span style="color:orange" class="fa fa-star "></span>
+                    <span style="color:orange" class="fa fa-star "></span>
+                    <span style="color:orange" class="fa fa-star "></span>
+                </td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <a type="button" id="edit_button3" class="edit" onclick="edit_row('3')"><i class="material-icons " style="color: orange;">&#xE254;</i></a>
+                        <a type="button" id="save_button3" class="save" onclick="save_row('3')" style="display: none;"><i class="material-icons" style="color: rgb(47, 255, 92)7, 129);">&#xE03B;</i></a>
+                        <a type="button" class="delete" onclick="delete_row('3')"><i class="material-icons" style="color: red;">&#xE872;</i></a>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr id="new_row" style="display: none;">
+                <td><input type="text" id="new_name" placeholder="Masukan Nama Usaha"></td>
+                <td><input type="text" id="new_jualan" placeholder="Masukan Jenis Usaha"></td>
+                <td><input type="text" id="new_nohp" placeholder="Masukan Nomer HP"></td>
+                <td><input type="text" id="new_foto" placeholder="Masukan Link Foto"></td>
+                <td><input type="text" id="new_rate" placeholder="Masukan 1-5"></td>
+                <td><a type="button" class="add" onclick="add_row();"><i class="fa fa-plus"> Data</i></a></td>                
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!-- footer -->
+<footer class="bg-dark" style="height: 55px;">
+    <p style="color:gray; text-align: center;" class="pt-3">Develop By @Kelompok 5 STT-NF</p>
+  </footer>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
